@@ -1,0 +1,61 @@
+{
+	"compilerOptions": {
+		"target": "es2017",
+		"allowJs": true,
+		"moduleResolution": "node",
+		"resolveJsonModule": true,
+		"allowSyntheticDefaultImports": true,
+		"noImplicitAny": true,
+		"noImplicitThis": true,
+		"alwaysStrict": true,
+		"strictNullChecks": true,
+		"strictPropertyInitialization": true,
+		"noFallthroughCasesInSwitch": true,
+		"noUnusedLocals": true,
+		"noUnusedParameters": true,
+		"noImplicitReturns": true,
+		"noEmitOnError": false,
+		"noEmit": true,
+		"inlineSourceMap": true,
+		"inlineSources": true,
+		"baseUrl": ".",
+		"module": "es6",
+		"experimentalDecorators": true,
+		"paths": {
+			"dummy/tests/*": [
+				"tests/*"
+			],
+			"dummy/*": [
+				"tests/dummy/app/*",
+				"app/*"
+			],
+			"ember-form": [
+				"addon"
+			],
+			"ember-form/*": [
+				"addon/*"
+			],
+			"ember-form/test-support": [
+				"addon-test-support"
+			],
+			"ember-form/test-support/*": [
+				"addon-test-support/*"
+			],
+			"fetch": [
+				"node_modules/ember-fetch"
+			],
+			"*": [
+				"types/*"
+			]
+		}
+	},
+	"exclude": ["node_modules", "dist"],
+	"include": [
+		"app/**/*",
+		"addon/**/*",
+		"tests/**/*",
+		"types/**/*",
+		"test-support/**/*",
+		"addon-test-support/**/*"
+	]
+}
