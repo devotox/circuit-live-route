@@ -1,0 +1,24 @@
+<LeafletMap 
+  @lat={{this.lat}} 
+  @lng={{this.lng}} 
+  @zoom={{this.zoom}} 
+  @zoomControl={{this.zoomControl}}
+as |layers|>
+  <GoogleMutantLayer @type="roadmap" />
+
+  <layers.marker @location={{this.pinLocation}} as |marker|>
+    <marker.popup>
+      <h3>The Oregon Convention Center</h3>
+      777 NE Martin Luther King Jr Blvd<br>
+      Portland, OR 97232
+    </marker.popup>
+  </layers.marker>
+  
+</LeafletMap>
+
+<NotificationPane 
+  @location={{this.location}} 
+  @deliveryNotes={{this.deliveryNotes}} 
+  @deliveryWindow={{this.deliveryWindow}} 
+  @instantNotification={{this.instantNotification}}
+/>

@@ -34,7 +34,7 @@ const options = {
 		preferNative: false
 	},
 	'ember-welcome-page': {
-		enabled: true
+		enabled: false
 	},
 	'sassOptions': {
 		includePaths: [
@@ -54,9 +54,11 @@ const options = {
 		extensions: ['js', 'css', 'map', 'webmanifest', 'png', 'jpg', 'gif', 'svg', 'eot', 'woff', 'woff2', 'ttf'],
 
 		exclude: [
-			'waveWorker.min.js',
-			'engine.js', 'engine.css',
-			'engine-vendor.js', 'engine-vendor.css'
+			'images/layers-2x.png',
+			'images/layers.png',
+			'images/marker-icon-2x.png',
+			'images/marker-icon.png',
+			'images/marker-shadow.png'
 		]
 	},
 	'autoprefixer': {
@@ -105,7 +107,7 @@ const options = {
 				convertTo: 'png',
 				outputFileName: 'icon-',
 				destination: 'assets/images/icons',
-				inputFilename: 'public/assets/images/icons/logo-dark.png',
+				inputFilename: 'public/assets/images/icons/logo.svg',
 				sizes: [
 					16,
 					32,

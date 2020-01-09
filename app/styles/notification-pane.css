@@ -1,0 +1,66 @@
+.notification-pane {
+	top: 0;
+	left: 0;
+	width: 30em;
+	height: 100vh;
+	padding: 0.5em;
+	z-index: 100000;
+	position: absolute;
+	background-color: transparent;
+
+	md-card {
+		color: #000000;
+		font-weight: 400;
+		background-color: #f5f8fe;
+
+		.md-headline {
+			font-size: 2em;
+			margin: 0.5em 0;
+			font-weight: 900;
+			letter-spacing: -2px;
+
+			.fed {
+				color: #2b017c;
+			}
+			.ex {
+				color: #ff5903;
+				position: relative;
+				left: -3.5px;
+			}
+		}
+
+		.md-subhead {
+			margin-top: 0.5em;
+
+			div:first-child {
+				margin-bottom: 0.5em;
+			}
+		}
+
+		md-card-title-text {
+			margin: 0.5em;
+		}
+
+		md-content {
+			padding: 1em;
+			margin: 0.5em;
+			color: inherit;
+			border-radius: 0.3em;
+			border: solid 1px #ccd2e4;
+			background-color: #ffffff;
+
+			md-icon {
+				margin-right: 0.5em;
+			}
+		}
+
+		.light {
+			color: #9da3b4;
+		}
+
+		.md-button {
+			color: #1974ff;
+			text-transform: initial;
+		}
+	}
+}

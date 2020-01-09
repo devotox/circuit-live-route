@@ -31,11 +31,6 @@
       "git add"
     ]
   },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
-  },
   "dependencies": {
     "@orbit/data": "0.16.4",
     "@orbit/indexeddb": "0.16.4",
@@ -57,8 +52,12 @@
     "@babel/plugin-proposal-throw-expressions": "7.7.4",
     "@babel/preset-env": "7.7.7",
     "@csstools/postcss-sass": "4.0.0",
-    "@ember/optional-features": "1.1.0",
+    "@ember/optional-features": "1.3.0",
     "@ember/render-modifiers": "1.0.2",
+    "@fortawesome/ember-fontawesome": "^0.2.1",
+    "@fortawesome/free-brands-svg-icons": "5.12.0",
+    "@fortawesome/free-regular-svg-icons": "5.12.0",
+    "@fortawesome/free-solid-svg-icons": "^5.12.0",
     "@glimmer/component": "1.0.0",
     "@glimmer/tracking": "1.0.0",
     "@types/ember": "3.1.1",
@@ -72,8 +71,8 @@
     "@types/qunit": "2.9.0",
     "@types/rsvp": "4.0.3",
     "@types/vfile-message": "2.0.0",
-    "@typescript-eslint/eslint-plugin": "2.14.0",
-    "@typescript-eslint/parser": "2.14.0",
+    "@typescript-eslint/eslint-plugin": "2.15.0",
+    "@typescript-eslint/parser": "2.15.0",
     "autoprefixer": "9.7.3",
     "babel-eslint": "10.0.3",
     "broccoli-asset-rev": "3.0.0",
@@ -82,11 +81,14 @@
     "ember-auto-import": "1.5.3",
     "ember-cli": "3.15.1",
     "ember-cli-app-version": "3.2.0",
-    "ember-cli-babel": "7.13.0",
+    "ember-cli-babel": "7.13.2",
     "ember-cli-dependency-checker": "3.2.0",
     "ember-cli-dependency-lint": "1.1.3",
+    "ember-cli-google-fonts": "2.16.2",
+    "ember-cli-head": "0.4.1",
     "ember-cli-htmlbars": "4.2.0",
-    "ember-cli-inject-live-reload": "2.0.1",
+    "ember-cli-image-transformer": "3.2.0",
+    "ember-cli-inject-live-reload": "2.0.2",
     "ember-cli-mirage": "1.1.6",
     "ember-cli-postcss": "5.0.0",
     "ember-cli-sri": "2.1.1",
@@ -95,12 +97,13 @@
     "ember-cli-typescript": "3.1.2",
     "ember-cli-typescript-blueprints": "3.0.0",
     "ember-cli-uglify": "3.0.0",
-    "ember-cli-utilities": "3.1.11",
+    "ember-cli-utilities": "3.1.13",
     "ember-composable-helpers": "3.0.3",
     "ember-data": "3.15.0",
     "ember-export-application-global": "2.0.1",
     "ember-fetch": "7.0.0",
     "ember-leaflet": "4.0.2",
+    "ember-leaflet-google-mutant-layer": "devotox/ember-leaflet-google-mutant-layer",
     "ember-lifeline": "4.1.5",
     "ember-load-initializers": "2.1.1",
     "ember-maybe-import-regenerator": "0.1.6",
@@ -115,10 +118,9 @@
     "ember-service-worker-index": "0.7.0",
     "ember-set-helper": "0.1.1",
     "ember-source": "3.15.0",
-    "ember-template-lint": "1.12.3",
+    "ember-template-lint": "1.13.0",
     "ember-truth-helpers": "2.1.0",
     "ember-web-app": "3.0.1",
-    "ember-welcome-page": "4.0.0",
     "eslint": "6.8.0",
     "eslint-plugin-babel": "5.3.0",
     "eslint-plugin-ember": "7.7.2",
@@ -162,7 +164,7 @@
     "angular-material-styles": "1.1.18"
   },
   "engines": {
-    "node": ">=8.3 || >= 10.*"
+    "node": ">= 10.*"
   },
   "ember": {
     "edition": "octane"

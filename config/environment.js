@@ -4,6 +4,7 @@ module.exports = function(environment) {
 
 	const orbit = require('./orbit');
 	const fastboot = require('./fastboot');
+	const googleFonts = require('./google-fonts');
 	const { version, name } = require('../package');
 	const emberCliMirage = require('./ember-cli-mirage');
 
@@ -15,6 +16,7 @@ module.exports = function(environment) {
 		rootURL,
 		version,
 		fastboot,
+		googleFonts,
 		environment,
 		locationType,
 		'modulePrefix': name,
