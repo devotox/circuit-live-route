@@ -2,9 +2,9 @@
 	top: 0;
 	left: 0;
 	width: 30em;
+	z-index: 1000;
 	height: 100vh;
 	padding: 0.5em;
-	z-index: 100000;
 	position: absolute;
 	background-color: transparent;
 
@@ -96,11 +96,19 @@
 				padding: 1em;
 				background-color: #f5f8fe;
 
+				&:first-child {
+					@media only screen and (max-width: 599px) {
+						border-radius: 0;
+						box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.12);
+					}
+				}
+
 				&:last-child {
 					border-radius: 0 0 8px 8px;
 
 					@media only screen and (max-width: 599px) {
 						border-radius: 0;
+						box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.12);
 					}
 				}
 			}

@@ -1,15 +1,5 @@
 export default function() {
 
-	this.environment === 'development'
-		&& console.info('[MIRAGE CONFIG]\n', this); // eslint-disable-line
-
-	this.namespace = '/api';
-
-	this.head('/status', () => ({ online: true }));
-
-	this.passthrough((request) => request?.queryParams?.skipMirage);
-	this.passthrough();
-
 	// These comments are here to help you get started. Feel free to delete them.
 
 	/*
@@ -33,4 +23,18 @@ export default function() {
 
     https://www.ember-cli-mirage.com/docs/route-handlers/shorthands
   */
+
+	this.namespace = '/api';
+
+	this.get('/deliveries');
+	this.post('/deliveries');
+
+	this.get('/deliveries/:id');
+	this.del('/deliveries/:id');
+	this.patch('/deliveries/:id');
+
+	this.head('/status', () => ({ online: true }));
+
+	this.passthrough((request) => request?.queryParams?.skipMirage);
+	this.passthrough();
 }
