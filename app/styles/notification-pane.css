@@ -8,59 +8,133 @@
 	position: absolute;
 	background-color: transparent;
 
+	@media only screen and (max-width: 599px) {
+		padding: 0;
+		width: 100%;
+	}
+
 	md-card {
-		color: #000000;
-		font-weight: 400;
-		background-color: #f5f8fe;
+		width: 100%;
+		border-radius: 8px;
+		background-color: transparent;
+		box-shadow: 0px 6px 13px rgba(0, 0, 0, 0.17);
 
-		.md-headline {
-			font-size: 2em;
-			margin: 0.5em 0;
-			font-weight: 900;
-			letter-spacing: -2px;
+		@media only screen and (max-width: 599px) {
+			margin: 0;
+			border-radius: 0;
+		}
 
-			.fed {
-				color: #2b017c;
+		md-card-title {
+			background-color: #f5f8fe;
+			border-radius: 8px 8px 0 0;
+
+			@media only screen and (max-width: 599px) {
+				border-radius: 0;
 			}
-			.ex {
-				color: #ff5903;
-				position: relative;
-				left: -3.5px;
+
+			md-card-title-text {
+				margin: 0.5em;
+
+				.md-headline {
+					font-size: 2em;
+					font-weight: 900;
+					margin-top: 0.5em;
+					padding-top: 0.5em;
+					letter-spacing: -2px;
+
+					@media only screen and (max-width: 599px) {
+						padding-top: 1em;
+					}
+
+					.fed {
+						color: #2a007c;
+					}
+
+					.ex {
+						left: -3.5px;
+						color: #ff5900;
+						position: relative;
+					}
+				}
+
+				.md-subhead {
+					margin-top: 1em;
+
+					@media only screen and (max-width: 599px) {
+						margin-top: 0.5em;
+					}
+
+					div:first-child {
+						margin-bottom: 0.5em;
+					}
+
+					div:last-child {
+						font-size: 28px;
+						font-weight: bold;
+					}
+				}
 			}
 		}
 
-		.md-subhead {
-			margin-top: 0.5em;
+		md-card-content {
+			padding: 0;
+			border-radius: 0 0 8px 8px;
 
-			div:first-child {
-				margin-bottom: 0.5em;
+			@media only screen and (max-width: 599px) {
+				border-radius: 0;
 			}
-		}
 
-		md-card-title-text {
-			margin: 0.5em;
-		}
+			.view-pane {
+				background-color: #f5f8fe;
 
-		md-content {
-			padding: 1em;
-			margin: 0.5em;
-			color: inherit;
-			border-radius: 0.3em;
-			border: solid 1px #ccd2e4;
-			background-color: #ffffff;
-
-			md-icon {
-				margin-right: 0.5em;
+				@media only screen and (max-width: 599px) {
+					background-color: transparent;
+				}
 			}
-		}
 
-		.light {
-			color: #9da3b4;
-		}
+			.panel {
+				padding: 1em;
+				background-color: #f5f8fe;
 
-		.md-button {
-			color: #1974ff;
-			text-transform: initial;
+				&:last-child {
+					border-radius: 0 0 8px 8px;
+
+					@media only screen and (max-width: 599px) {
+						border-radius: 0;
+					}
+				}
+			}
+
+			md-content {
+				padding: 1em;
+				margin: 0.5em;
+				color: inherit;
+				border-radius: 4px;
+				border: solid 1px #ccd2e3;
+				background-color: #ffffff;
+
+				.light {
+					color: #9da3b4;
+				}
+
+				md-icon {
+					color: inherit;
+					margin-right: 0.5em;
+				}
+			}
+
+			.md-button {
+				margin: 0;
+				padding: 0;
+				color: #1874ff;
+				font-size: 14px;
+				text-transform: initial;
+
+				&:hover,
+				&:active {
+					background-color: transparent;
+				}
+			}
 		}
 	}
 }

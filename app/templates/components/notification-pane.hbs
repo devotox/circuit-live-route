@@ -1,16 +1,14 @@
 <PaperContent class="notification-pane layout-row">
 	<PaperCard as |card|>
-		<card.title 
-			class="layout-column flex-initial"
-		as |title|>
-			<title.text class="layout-column layout-align-center-center" as |text|>
-				<text.headline>
+		<card.title class="flex-initial" as |title|>
+			<title.text class="layout-row layout-gt-xs-column layout-align-space-between layout-align-gt-xs-center-center" as |text|>
+				<text.headline class="flex-order-2 flex-order-gt-xs-1">
 					<span class="fed">Fed</span>
 					<span class="ex">Ex</span>
 				</text.headline>
-				<text.subhead class="layout-column layout-align-center-center">
+				<text.subhead class="layout-column layout-align-start layout-align-gt-xs-center-center flex-order-1 flex-order-gt-xs-2">
 					<div>Out for delivery</div>
-					<div class="layout-row text-3xl font-bold">
+					<div class="layout-row">
 						<span>13:30</span>
 						<span>&nbsp;-&nbsp;</span>
 						<span>14:40</span>
@@ -20,42 +18,45 @@
 		</card.title>
 
 		<card.content class="layout-column flex">
-			<PaperContent class="layout-row">
-				<PaperIcon @icon="access time" />
-				<span class="layout-row layout-align-center-center">Not in?</span>
-				<span class="flex"></span>
-				<PaperButton>
-					Find a better time
-				</PaperButton>
-			</PaperContent>
+			<div class="panel">
+				<PaperContent class="layout-row">
+					<PaperIcon @icon="access time" />
+					<span class="layout-row layout-align-center-center">Not in?</span>
+					<span class="flex"></span>
+					<PaperButton @noink={{true}}>
+						Find a better time
+					</PaperButton>
+				</PaperContent>
 
-			<PaperContent>
-				<PaperIcon @icon="edit" />
-				Add delivery notes
-			</PaperContent>
+				<PaperContent>
+					<PaperIcon @icon="edit" />
+					Add delivery notes
+				</PaperContent>
+			</div>
 
+			<span class="flex view-pane"></span>
 
-			<span class="flex"></span>
+			<div class="panel">
+				<PaperContent>
+					<div>
+						<PaperIcon @icon="person pin" />
+						2400 Green St
+					</div>
+					<div>
+						<PaperIcon @icon="" />
+						<span class="light">CA 94123</span>
+					</div>
+				</PaperContent>
 
-			<PaperContent>
-				<div>
-					<PaperIcon @icon="person pin" />
-					2400 Green St
-				</div>
-				<div>
-					<PaperIcon @icon="" />
-					<span class="light">CA 94123</span>
-				</div>
-			</PaperContent>
-
-			<PaperContent class="layout-row">
-				<PaperIcon @icon="sms failed" />
-				<span class="layout-row layout-align-center-center">Get notified instantly</span>
-				<span class="flex"></span>
-				<PaperButton>
-					Enable
-				</PaperButton>
-			</PaperContent>
+				<PaperContent class="layout-row">
+					<PaperIcon @icon="sms failed" />
+					<span class="layout-row layout-align-center-center">Get notified instantly</span>
+					<span class="flex"></span>
+					<PaperButton @noink={{true}}>
+						Enable
+					</PaperButton>
+				</PaperContent>
+			</div>
 		</card.content>
 	</PaperCard>
 </PaperContent>
