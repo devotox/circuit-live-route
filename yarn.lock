@@ -7109,6 +7109,13 @@ ember-get-config@^0.2.2, ember-get-config@^0.2.4:
     ember-cli-version-checker "^2.1.0"
     ember-factory-for-polyfill "^1.3.1"
 
+ember-google-geocoder@devotox/ember-google-geocoder:
+  version "0.2.0"
+  resolved "https://codeload.github.com/devotox/ember-google-geocoder/tar.gz/efc6cd457f862bc57e9da0ae44cd11e1fa2b53ef"
+  dependencies:
+    ember-cli-babel "^7.13.0"
+    ember-cli-htmlbars "^4.2.0"
+
 ember-in-element-polyfill@^0.1.3:
   version "0.1.3"
   resolved "https://registry.yarnpkg.com/ember-in-element-polyfill/-/ember-in-element-polyfill-0.1.3.tgz#cacba70c3244a9148c278bce4704c3feb60c6778"

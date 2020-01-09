@@ -7,6 +7,7 @@ module.exports = function(environment) {
 	const googleFonts = require('./google-fonts');
 	const { version, name } = require('../package');
 	const emberCliMirage = require('./ember-cli-mirage');
+	const googleMutantLeaflet = require('./google-mutant-leaflet');
 
 	const rootURL = process.env.CORBER ? '' : '/';
 	const locationType = process.env.CORBER ? 'hash' : 'auto';
@@ -19,6 +20,7 @@ module.exports = function(environment) {
 		googleFonts,
 		environment,
 		locationType,
+		googleMutantLeaflet,
 		'modulePrefix': name,
 		'ember-cli-mirage': emberCliMirage,
 

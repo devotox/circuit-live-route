@@ -113,6 +113,12 @@
 				border: solid 1px #ccd2e3;
 				background-color: #ffffff;
 
+				[contenteditable] {
+					color: inherit;
+					caret-color: #000000;
+					outline-color: #1874ff;
+				}
+
 				.light {
 					color: #9da3b4;
 				}

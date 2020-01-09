@@ -1,70 +1,106 @@
 <PaperContent class="notification-pane layout-row">
-	<PaperCard as |card|>
-		<card.title class="flex-initial" as |title|>
-			<title.text class="layout-row layout-gt-xs-column layout-align-space-between layout-align-gt-xs-center-center" as |text|>
-				<text.headline class="flex-order-2 flex-order-gt-xs-1">
-					<span class="fed">Fed</span>
-					<span class="ex">Ex</span>
-				</text.headline>
-				<text.subhead class="layout-column layout-align-start layout-align-gt-xs-center-center flex-order-1 flex-order-gt-xs-2">
-					<div>Out for delivery</div>
-					<div class="layout-row">
-						<span>{{@delivery.window.start}}</span>
-						<span>&nbsp;-&nbsp;</span>
-						<span>{{@delivery.window.end}}</span>
-					</div>
-				</text.subhead>
-			</title.text>
-		</card.title>
+  <PaperCard as |card|>
+    <card.title class="flex-initial" as |title|>
+      <title.text
+        class="layout-row layout-gt-xs-column layout-align-space-between layout-align-gt-xs-center-center" as |text|
+      >
+        <text.headline class="flex-order-2 flex-order-gt-xs-1">
+          <span class="fed">
+            Fed
+          </span>
+          <span class="ex">
+            Ex
+          </span>
+        </text.headline>
+        <text.subhead
+          class="layout-column layout-align-start layout-align-gt-xs-center-center flex-order-1 flex-order-gt-xs-2"
+        >
+          <div>
+            Out for delivery
+          </div>
+          <div class="layout-row">
+            <span>
+              {{@delivery.window.start}}
+            </span>
+            <span>
+              &nbsp;-&nbsp;
+            </span>
+            <span>
+              {{@delivery.window.end}}
+            </span>
+          </div>
+        </text.subhead>
+      </title.text>
+    </card.title>
 
-		<card.content class="layout-column flex">
-			<div class="panel">
-				<PaperContent class="layout-row">
-					<PaperIcon @icon="access time" />
-					<span class="layout-row layout-align-center-center">Not in?</span>
-					<span class="flex"></span>
-					<PaperButton @noink={{true}}>
-						Find a better time
-					</PaperButton>
-				</PaperContent>
+    <card.content class="layout-column flex">
+      <div class="panel">
+        <PaperContent class="layout-row">
+          <PaperIcon @icon="access time" />
+          <span class="layout-row layout-align-center-center">
+            Not in?
+          </span>
+          <span class="flex"></span>
+          <PaperButton
+            @noink={{true}}
+            {{on "click" (fn (route-action "changeDeliveryTime"))}}
+          >
+            Find a better time
+          </PaperButton>
+        </PaperContent>
 
-				<PaperContent>
-					<PaperIcon @icon="edit" />
-					Add delivery notes
-				</PaperContent>
-			</div>
+        <PaperContent class="layout-row">
+          <PaperIcon @icon="edit" />
 
-			<span class="flex view-pane" />
+          <ContentEditable
+            class="flex"
+            @tagName="span"
+            @spellcheck={{true}}
+            @allowNewlines={{false}}
+            @value={{@delivery.notes}}
+            @clearPlaceholderOnFocus={{true}}
+            @placeholder="Add delivery notes"
+            @enter={{fn (route-action "addDeliveryNotes")}}
+          />
+        </PaperContent>
+      </div>
 
-			<div class="panel">
-				<PaperContent>
-					<div>
-						<PaperIcon @icon="person pin" />
-						<span>
-							{{@delivery.location.number}} {{@delivery.location.street}}
-						</span>
-					</div>
-					<div>
-						<PaperIcon @icon="" />
-						<span class="light">
-							{{@delivery.location.postcode}}
-						</span>
-					</div>
-				</PaperContent>
+      <span class="flex view-pane"></span>
 
-				<PaperContent class="layout-row">
-					<PaperIcon @icon="sms failed" />
-					<span class="layout-row layout-align-center-center">Get notified instantly</span>
-					<span class="flex"></span>
-					<PaperButton @noink={{true}}>
-						{{#if @delivery.notification}}
-							Disable
-						{{else}}
-							Enable
-						{{/if}}
-					</PaperButton>
-				</PaperContent>
-			</div>
-		</card.content>
-	</PaperCard>
+      <div class="panel">
+        <PaperContent class="layout-column">
+          <div>
+            <PaperIcon @icon="person pin" />
+            <span>
+              {{@delivery.location.number}} {{@delivery.location.street}}
+            </span>
+          </div>
+          <div>
+            <PaperIcon @icon="" />
+            <span class="light">
+              {{@delivery.location.postcode}}
+            </span>
+          </div>
+        </PaperContent>
+
+        <PaperContent class="layout-row">
+          <PaperIcon @icon="sms failed" />
+          <span class="layout-row layout-align-center-center">
+            Get notified instantly
+          </span>
+          <span class="flex"></span>
+          <PaperButton
+            @noink={{true}}
+            {{on "click" (fn (toggle "notification" @delivery))}}
+          >
+            {{#if @delivery.notification}}
+              Disable
+            {{else}}
+              Enable
+            {{/if}}
+          </PaperButton>
+        </PaperContent>
+      </div>
+    </card.content>
+  </PaperCard>
 </PaperContent>

@@ -1,14 +1,17 @@
 <LeafletMap 
-  @lat={{this.lat}} 
-  @lng={{this.lng}} 
-  @zoom={{this.zoom}} 
+  @zoom={{18}} 
   @dragging={{false}}
   @zoomControl={{false}}
+  @lat={{@model.location.lat}} 
+  @lng={{@model.location.lng}} 
 as |layers|>
   <GoogleMutantLayer @type="roadmap" />
-  <layers.marker @location={{this.pinLocation}} />
+  <layers.marker 
+    @lat={{@model.location.lat}} 
+    @lng={{@model.location.lng}} 
+  />
 </LeafletMap>
 
 <NotificationPane 
-  @delivery={{this.delivery}} 
+  @delivery={{@model}} 
 />
