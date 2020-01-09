@@ -1,7 +1,7 @@
 import JSONAPIAdapter from 'ember-data/adapters/json-api';
 import AdapterFetch from 'ember-fetch/mixins/adapter-fetch';
 
-export default class Application extends JSONAPIAdapter.extend(Auth0DataAdapterMixin, AdapterFetch) {
+export default class Application extends JSONAPIAdapter.extend(AdapterFetch) {
 	namespace = 'api'
 }
 
