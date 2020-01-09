@@ -9,9 +9,9 @@
 				<text.subhead class="layout-column layout-align-start layout-align-gt-xs-center-center flex-order-1 flex-order-gt-xs-2">
 					<div>Out for delivery</div>
 					<div class="layout-row">
-						<span>13:30</span>
+						<span>{{@delivery.window.start}}</span>
 						<span>&nbsp;-&nbsp;</span>
-						<span>14:40</span>
+						<span>{{@delivery.window.end}}</span>
 					</div>
 				</text.subhead>
 			</title.text>
@@ -34,17 +34,21 @@
 				</PaperContent>
 			</div>
 
-			<span class="flex view-pane"></span>
+			<span class="flex view-pane" />
 
 			<div class="panel">
 				<PaperContent>
 					<div>
 						<PaperIcon @icon="person pin" />
-						2400 Green St
+						<span>
+							{{@delivery.location.number}} {{@delivery.location.street}}
+						</span>
 					</div>
 					<div>
 						<PaperIcon @icon="" />
-						<span class="light">CA 94123</span>
+						<span class="light">
+							{{@delivery.location.postcode}}
+						</span>
 					</div>
 				</PaperContent>
 
@@ -53,7 +57,11 @@
 					<span class="layout-row layout-align-center-center">Get notified instantly</span>
 					<span class="flex"></span>
 					<PaperButton @noink={{true}}>
-						Enable
+						{{#if @delivery.notification}}
+							Disable
+						{{else}}
+							Enable
+						{{/if}}
 					</PaperButton>
 				</PaperContent>
 			</div>
